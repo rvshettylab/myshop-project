@@ -79,7 +79,7 @@ jobs:
 
             - name: update tag in kubernetes deployment manifest
               run: |
-                sed -i "s|image: .*|image: ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{ github.run_id }}|" ./kubernetes/product-catalog/deploy.yaml
+                sed -i "s|image: .*|image: ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{ github.run_id }}|" kubernetes/product-catalog/deploy.yaml
           
             - name: Commit and push changes
               run: |
